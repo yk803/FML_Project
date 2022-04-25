@@ -224,7 +224,7 @@ for i in pbar:
   total_validation_loss = 0.0
   total_validation_correct = 0.0
 
-  model.train()
+  net.train()
 
   for batch in tqdm(train_dataloader, leave=False):
     loss, correct = get_loss_and_correct(net, batch, criterion, device)
