@@ -11,7 +11,8 @@ import os
 
 from models import *
 #from autoattack import AutoAttack
-from tqdm import tqdm
+from tqdm.notebook import tqdm
+#from tqdm import tqdm
 
 learning_rate = 0.1
 epsilon = 8/255
@@ -181,17 +182,17 @@ def get_loss_and_correct(net, batch, criterion, device):
   # - number of correctly classified examples in the batch (Tensor)
   pass
   #for batch_idx, (data,target) in enumerate(train_dataloader):
-  data,target = batch
+  data, target = batch
   data, target = data.to(device), target.to(device)
     
-  adv = adversary.perturb(inputs, targets)    
+  adv = adversary.perturb(data, target)    
   adv_outputs = net(adv)
-  loss = criterion(adv_outputs, targets)
+  loss = criterion(adv_outputs, target)
 
   _, predicted = adv_outputs.max(1)
 
-  total += targets.size(0)
-  correct = predicted.eq(targets).sum()
+  #total += target.size(0)
+  correct = predicted.eq(target).sum()
   return loss, correct  #(pred.argmax(1) == target).type(torch.float).sum()
 
 
