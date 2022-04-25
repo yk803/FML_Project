@@ -36,7 +36,7 @@ train_dataset = torchvision.datasets.CIFAR10(root='./data', train=True, download
 validation_dataset,test_dataset = torch.utils.data.random_split(torchvision.datasets.CIFAR10(root='./data', train=False, download=True, transform=transform_test),[5000,5000],generator=torch.Generator().manual_seed(42))
 
 train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=128, shuffle=True, num_workers=4)
-validation_loader = torch.utils.data.Dataloader(validation_dataset, batch_size=100, num_workers=4)
+validation_loader = torch.utils.data.DataLoader(validation_dataset, batch_size=100, num_workers=4)
 test_loader = torch.utils.data.DataLoader(test_dataset, batch_size=100, shuffle=False, num_workers=4)
 
 class LinfPGDAttack(object):
@@ -192,8 +192,6 @@ def get_loss_and_correct(net, batch, criterion, device):
 
   total += targets.size(0)
   correct = predicted.eq(targets).sum()
-
-
   return loss, correct  #(pred.argmax(1) == target).type(torch.float).sum()
 
 
