@@ -197,14 +197,14 @@ def get_loss_and_correct(net, batch, criterion, device):
 
 
 
-def step(loss, scheduler):#optimizer
+def step(loss,optimizer):
   # Implement backward pass and update.
   # TODO
   pass
   optimizer.zero_grad()
   loss.backward()
-#  optimizer.step();
-  scheduler.step()   
+  optimizer.step();
+  #scheduler.step()   
 
 net.train()
 
@@ -232,6 +232,8 @@ for i in pbar:
     step(loss, scheduler)
     total_train_loss += loss.item()
     total_train_correct += correct.item()
+  
+  scheduler.step()
 
   with torch.no_grad():
     for batch in validation_loader:
