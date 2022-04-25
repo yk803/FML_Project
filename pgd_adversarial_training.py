@@ -229,7 +229,7 @@ for i in pbar:
 
   for batch in tqdm(train_loader, leave=False):
     loss, correct = get_loss_and_correct(net, batch, criterion, device)
-    step(loss, scheduler)
+    step(loss, optimizer)
     total_train_loss += loss.item()
     total_train_correct += correct.item()
   
