@@ -111,8 +111,6 @@ def get_loss_and_correct(net, batch, criterion, device, adversary=adversary,is_v
   # Return a tuple:
   # - loss for the batch (Tensor)
   # - number of correctly classified examples in the batch (Tensor)
-  pass
-  #for batch_idx, (data,target) in enumerate(train_dataloader):
   data, target = batch
   data, target = data.to(device), target.to(device)
   if not is_vali:
@@ -132,12 +130,11 @@ def get_loss_and_correct(net, batch, criterion, device, adversary=adversary,is_v
 
 def step(loss,optimizer):
   # Implement backward pass and update.
-  # TODO
-  pass
   optimizer.zero_grad()
   loss.backward()
   optimizer.step();
   #scheduler.step()   
+
 
 net.train()
 
@@ -170,7 +167,9 @@ for i in pbar:
 
   with torch.no_grad():
     for batch in validation_loader:
-      loss, correct = get_loss_and_correct(net, batch, criterion, device, adversary=adv_AA, is_vali=True)
+      # Take very long time to run AA on HPC. Change is_vali below to False to avoid that.
+      # No change needs to be made when running on Google Colab.
+      loss, correct = get_loss_and_correct(net, batch, criterion, device, adversary=adv_AA, is_vali=True) 
       total_validation_loss += loss.item()
       total_validation_correct += correct.item()
   
