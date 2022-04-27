@@ -11,12 +11,12 @@ import torchvision
 import torchvision.transforms as transforms
 
 import os
-import argparser
+import argparse
 
 from models import *
 from autoattack import AutoAttack
-#from tqdm.notebook import tqdm
-from tqdm import tqdm
+from tqdm.notebook import tqdm # use this in .ipynb file
+#from tqdm import tqdm # use this in .py file
 
 parser = argparse.ArgumentParser(description="Train the model with SOAR")
 parser.add_argument(
@@ -29,7 +29,7 @@ parser.add_argument(
     type=int,
     help="save a checkpoint after how many epochs"
 )
-args=parser.pars_args()
+args=parser.parse_args()
 
 learning_rate = 0.001
 epsilon = 8/255
@@ -186,11 +186,6 @@ for i in pbar:
   validation_accuracies.append(validation_accuracy)
 
   pbar.set_postfix({'train_loss': mean_train_loss, 'validation_loss': mean_validation_loss, 'train_accuracy': train_accuracy, 'validation_accuracy': validation_accuracy})
-
-'''
-  if i % 10 == 0 and i != 0:
-    print(f'epoch: {i}, train_loss: {mean_train_loss}, validation_loss: {mean_validation_loss}, train_accuracy:{train_accuracy}, validation_accuracy:{validation_accuracy}')
-'''
 
   if validation_accuracy > best_val_accuracy:
     best_val_accuracy = validation_accuracy;
