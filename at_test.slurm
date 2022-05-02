@@ -19,8 +19,5 @@ python /scratch/yy2949/fml2/old_test.py 30_pgd_adversarial_training.pt checkpoin
 python /scratch/yy2949/fml2/old_test.py 50_pgd_adversarial_training.pt checkpoint_soar_last
 python /scratch/yy2949/fml2/old_test.py 70_pgd_adversarial_training.pt checkpoint_soar_last
 python /scratch/yy2949/fml2/old_test.py 90_pgd_adversarial_training.pt checkpoint_soar_last
-python /scratch/yy2949/fml2/old_test.py 110_pgd_adversarial_training.pt checkpoint_soar_last
-python /scratch/yy2949/fml2/old_test.py 130_pgd_adversarial_training.pt checkpoint_soar_last
-python /scratch/yy2949/fml2/old_test.py 150_pgd_adversarial_training.pt checkpoint_soar_last
 python /scratch/yy2949/fml2/old_test.py best_pgd_adversarial_training.pt checkpoint_soar_last
 "
