@@ -14,5 +14,5 @@
 
 singularity exec --nv --bind /scratch/yy2949 --overlay /scratch/yy2949/overlay-25GB-500K.ext3:ro /scratch/yy2949/cuda11.4.2-cudnn8.2.4-devel-ubuntu20.04.3.sif /bin/bash -c "
 source /ext3/env.sh
-python /scratch/yy2949/fml2/train_.py checkpoint_soar_base 10
+python /scratch/yy2949/fml2/train.py checkpoint_soar_base 10
 "
