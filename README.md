@@ -1,6 +1,6 @@
 # Improve Adversarial Robustness with second-order approximation: A reasonable approach, or an unavailing trick?
 
-This repository is the final project of NYU CSCI-GA 2566 [Foundations of Machine Learning](https://cs.nyu.edu/~mohri/mlsp22/) at Spring 2022. This project is the work of [Panchi Mei](mailto:pm2885@nyu.edu), [Yukai Yang](https://github.com/yk803), and [Zequan Wu](zw2700@nyu.edu).
+This repository is the final project of NYU CSCI-GA 2566 [Foundations of Machine Learning](https://cs.nyu.edu/~mohri/mlsp22/) at Spring 2022. This project is the work of [Panchi Mei](https://github.com/Panchi-Mei), [Yukai Yang](https://github.com/yk803), and [Zequan Wu](https://github.com/zw2700).
 
 # Abstract
 
@@ -50,12 +50,6 @@ python test.py best_pgd_adversarial_training.pt checkpoint_soar
 This file has two inputs: filename of the checkpoint, and the directory it is stored.
 
 
-# Result
-
-
-
 
 # Acknowledgement
 * The baseline code for ResNet and the vanilla PGD training is adapted from the work of [Dongbig Na](https://github.com/ndb796/Pytorch-Adversarial-Training-CIFAR).
-
-# Reference
