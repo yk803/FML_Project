@@ -1,4 +1,4 @@
-# Improve Adversarial Robustness with second-order approximation: A reasonable approach, or an unavailing trick?
+# HAAT: Improve Adversarial Robustness via Hessian Approximation
 
 This repository is the final project of NYU CSCI-GA 2566 [Foundations of Machine Learning](https://cs.nyu.edu/~mohri/mlsp22/) at Spring 2022. This project is the work of [Panchi Mei](https://github.com/Panchi-Mei), [Yukai Yang](https://github.com/yk803), and [Zequan Wu](https://github.com/zw2700).
 
